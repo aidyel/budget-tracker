@@ -32,7 +32,7 @@ function saveRecord(record) {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
 
 
-    const transactionObjectStore = transaction.ObjectStore('new_transaction');
+    const transactionObjectStore = transaction.objectStore('new_transaction');
 
     transactionObjectStore.add(record);
 }
@@ -43,7 +43,7 @@ function uploadTransaction() {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
 
     // access your object store
-    const transactionObjectStore = transaction.ObjectStore('new_transaction');
+    const transactionObjectStore = transaction.objectStore('new_transaction');
 
     // get all records from store and set to a variable
     const getAll = transactionObjectStore.getAll();
@@ -67,7 +67,7 @@ function uploadTransaction() {
                     const transaction = db.transaction(['new_transaction'], 'readwrite');
 
                     // access your object store
-                    const transactionObjectStore = transaction.ObjectStore('new_transaction');
+                    const transactionObjectStore = transaction.objectStore('new_transaction');
 
                       // clear all items in your store
                     transactionObjectStore.clear();
